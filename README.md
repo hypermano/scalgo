@@ -4,7 +4,7 @@
 
 ```sh
 $ cd MenuApp
-$ ./sbt
+$ sbt
 > container:start
 > browse
 ```
