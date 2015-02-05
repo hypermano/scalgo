@@ -8,8 +8,7 @@ import org.scalatra.Ok
 import org.scalatra.UrlGeneratorSupport
 import com.garcon.app.data.Example
 import com.garcon.app.data.Wizard
-import grizzled.slf4j.Logger
-import com.garcon.app.data.Wizard
+import com.garcon.app.utils.Logging
 import com.garcon.app.services.WizardService
 import scaldi.{Injectable, Injector}
 
@@ -18,8 +17,6 @@ class MenuServlet(implicit inj: Injector) extends MenuappStack with UrlGenerator
   // Sets up automatic case class to JSON output serialization, required by
   // the JValueResult trait.
   protected implicit val jsonFormats: Formats = DefaultFormats
-  
-  protected val logger = Logger(classOf[MenuServlet])
   
   protected val wizardService = inject [WizardService]
 

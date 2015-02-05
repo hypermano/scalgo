@@ -22,18 +22,19 @@ object MenuappBuild extends Build {
       scalaVersion := ScalaVersion,
       resolvers += Classpaths.typesafeReleases,
       libraryDependencies ++= Seq(
+        "ch.qos.logback" % "logback-classic" % "1.1.1" % "runtime",
         "org.scalatra" %% "scalatra" % ScalatraVersion,
         "org.scalatra" %% "scalatra-scalate" % ScalatraVersion,
         "org.scalatra" %% "scalatra-specs2" % ScalatraVersion % "test",
         "org.scalatra" %% "scalatra-json" % ScalatraVersion,
         "org.json4s"   %% "json4s-jackson" % "3.2+",
-        //"ch.qos.logback" % "logback-classic" % "1.1.2" % "runtime",
         "org.eclipse.jetty" % "jetty-webapp" % "9.1.5.v20140505" % "container",
         "org.eclipse.jetty" % "jetty-plus" % "9.1.5.v20140505" % "container",
         "javax.servlet" % "javax.servlet-api" % "3.1.0",
         "org.mongodb" %% "casbah" % "2.7.3",
         "com.novus" %% "salat" % "1.9.9",
-        "org.scaldi" %% "scaldi" % "0.5.1"
+        "org.scaldi" %% "scaldi" % "0.5.1",
+        "com.typesafe" % "config" % "1.2.1"
       ),
       scalateTemplateConfig in Compile <<= (sourceDirectory in Compile){ base =>
         Seq(
